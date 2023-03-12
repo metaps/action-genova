@@ -9,7 +9,7 @@ on:
     branches:
       - develop
     paths:
-      - '/log_forwarder'
+      - '/log_forwarder' # 変更を検出する特定のディレクトリを指定
 jobs:
   genova_auto_deploy:
     runs-on: ubuntu-18.04
@@ -18,6 +18,7 @@ jobs:
         id: genova-metadata
         uses: metaps/action-genova@main
         with:
+          app_domain: ***
           genova_github_secret_key: "${{ secrets.GENOVA_GITHUB_SECRET_KEY }}"
 ```
 
@@ -26,4 +27,5 @@ jobs:
 
 | input          | required | default                  | description                                         |
 |----------------|----------|--------------------------|---------------------------|  
+| `app_domain` |✔       |                   | 対象のアプリで稼働中のgenovaのドメインを指定します           |
 | `genova_github_secret_key` |✔       |                   | Repository Secret Keyを指定します           |

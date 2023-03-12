@@ -12,7 +12,7 @@ runs:
   steps:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - uses: fjogeleit/http-request-action@master
         with:
           url: "https://genova.console.${{inputs.app_domain}}/api/v2/github/actions/push"
