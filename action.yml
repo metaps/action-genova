@@ -17,7 +17,6 @@ runs:
         with:
           url: "https://genova.console.${{inputs.app_domain}}/api/v2/github/actions/push"
           method: POST
-          GENOVA_GITHUB_SECRET_KEY: 
           customHeaders: >-
             {
               "X-GITHUB-SECRET-KEY": "${{inputs.genova_github_secret_key}}"

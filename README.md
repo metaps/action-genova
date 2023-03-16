@@ -1,7 +1,7 @@
 # Github Action: genova auto deploy
 
 # 利用の方法
-1. 対象のリポジトリにgithub action用のRepository Secret Keyとして `GENOVA_GITHUB_SECRET_KEY` を作成してください。
+1. 対象のリポジトリにgithub action用のRepository Secret Keyとして `GENOVA_GITHUB_SECRET_KEY` を作成して下さい。
 2. `.github/workflow/` 配下に下記内容のyamlファイルを配置して下さい。
 ```yaml
 on:
