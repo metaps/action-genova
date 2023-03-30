@@ -14,6 +14,18 @@ runs:
   steps:
     - uses: actions/checkout@v3
     - uses: fjogeleit/http-request-action@master
-        with:
-          url: "https://genova.console.re-shine.jp/api/v2/github/actions/push"
-          method: POST
+      with:
+        url: https://genova.console.re-shine.jp/api/v2/github/actions/push
+        method: POST
+        customHeaders: >-
+            {
+              "X-GITHUB-SECRET-KEY": ${{inputs.genova-github-secret-key}}
+            }
+        data: >-
+            {
+              "repository": ${{github.event.repository.name}},
+              "ref": ${{github.event.ref}},
+              "commit_url": ${{github.event.head_commit.url}},
+              "author": ${{github.event.head_commit.author.username}},
+              "pushed_at": ${{github.event.repository.pushed_at}}
+            }
