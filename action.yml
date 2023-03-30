@@ -11,7 +11,11 @@ inputs:
     type: string
 runs:
   using: "composite"
+  runs-on: ubuntu-latest
   steps:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
+    - uses: fjogeleit/http-request-action@master
+        with:
+          url: https://genova.console.re-shine.jp/api/v2/github/actions/push
+          method: POST
+          data: '{"account": "metaps"}'
