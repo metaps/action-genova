@@ -23,8 +23,6 @@ runs:
             {
               "X-GITHUB-SECRET-KEY": "${{inputs.genova-github-secret-key}}"
             }
-          account:
-          repository:
           data: >-
             {
               "account": "${{github.event.repository.owner.name}}",
