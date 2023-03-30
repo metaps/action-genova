@@ -21,7 +21,7 @@ runs:
           method: POST
           customHeaders: >-
             {
-              "X-GITHUB-SECRET-KEY": "${{inputs.genova-github-secret-key}}"
+              "X-GITHUB-SECRET-KEY": "${{ secrets.GENOVA_GITHUB_SECRET_KEY }}"
             }
           data: >-
             {
