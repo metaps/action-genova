@@ -9,13 +9,12 @@ on:
     branches:
       - develop
     paths:
-      - '/log_forwarder' # 変更を検出する特定のディレクトリを指定
+      - 'log_forwarder/**' # 変更を検出する特定のディレクトリを指定
 jobs:
   genova_auto_deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - name: genova metadata
-        id: genova-metadata
+      - name: genova
         uses: metaps/action-genova@main
         with:
           app_domain: ***
