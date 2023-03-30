@@ -17,4 +17,3 @@ runs:
         with:
           url: https://genova.console.re-shine.jp/api/v2/github/actions/push
           method: POST
-          customHeaders: {X-GITHUB-SECRET-KEY: ${{inputs.genova-github-secret-key}}}
