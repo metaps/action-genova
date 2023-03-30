@@ -1,11 +1,11 @@
 name: 'Genova auto deploy'
 description: 'Genova auto deploy'
 inputs:
-  genova_github_secret_key:
-    description: 'genova_github_secret_key'
+  genova-github-secret-key:
+    description: 'genova github secret key'
     required: true
-  app_domain:
-    description: 'app_domain'
+  app-domain:
+    description: 'app domain'
     required: true
 runs:
   using: "composite"
@@ -15,11 +15,11 @@ runs:
       - uses: actions/checkout@v3
       - uses: fjogeleit/http-request-action@master
         with:
-          url: https://genova.console.${{inputs.app_domain}}/api/v2/github/actions/push
+          url: https://genova.console.${{inputs.app-domain}}/api/v2/github/actions/push
           method: POST
           customHeaders: >-
             {
-              "X-GITHUB-SECRET-KEY": ${{inputs.genova_github_secret_key}}
+              "X-GITHUB-SECRET-KEY": ${{inputs.genova-github-secret-key}}
             }
           account:
           repository:
