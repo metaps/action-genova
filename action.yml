@@ -23,9 +23,9 @@ runs:
             }
         data: >-
             {
-              "repository": ${{github.event.repository.name}},
-              "ref": ${{github.event.ref}},
-              "commit_url": ${{github.event.head_commit.url}},
-              "author": ${{github.event.head_commit.author.username}},
-              "pushed_at": ${{github.event.repository.pushed_at}}
+              "repository": "${{github.event.repository.name}}",
+              "ref": "${{github.event.ref}}",
+              "commit_url": "${{github.event.head_commit.url}}",
+              "author": "${{github.event.head_commit.author.username}}",
+              "pushed_at": "${{github.event.repository.pushed_at}}"
             }
